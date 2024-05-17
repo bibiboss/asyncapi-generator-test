@@ -57,14 +57,16 @@ components:
           type: string
           enum:
             - "input"
-        data: # DATA Object first definition
-          type: object
-          properties:
-            commitId:
-              type: string
-              examples:
-                - "toto"
-                - "tata"
+        data:
+          $ref: '#/components/schemas/commitId'
+    commitId:
+      type: object
+      properties:
+        commitId:
+          type: string
+          examples:
+            - "toto"
+            - "tata"
     output:
       type: object
       properties:
@@ -77,7 +79,7 @@ components:
           enum:
             - "update"
             - "delete"
-        data: # DATA object second definition
+        data:
           type: object
           properties:
             tenantId:
